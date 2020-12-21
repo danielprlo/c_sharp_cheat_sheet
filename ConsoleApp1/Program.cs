@@ -18,6 +18,35 @@ namespace ConsoleApp1
             dateTimes();
         }
 
+        static void strings()
+        {
+            var fullName = "Daniel Perez ";
+            Console.WriteLine("Name {0}", fullName);
+            
+            var fullNameTrimmed = fullName.Trim();
+            Console.WriteLine("Trimmed name {0}", fullNameTrimmed);
+
+            var fullNameUpper = fullNameTrimmed.ToUpper();
+            Console.WriteLine("Upper name {0}", fullNameUpper);
+
+            var index = fullName.IndexOf(' ');
+            Console.WriteLine("Index of the first white space {0}", index);
+
+            // Substring
+            // Substring range
+            var firstName = fullName.Substring(0, index);
+            // From index on
+            var lastName = fullName.Substring(index + 1);
+
+            // Split
+            var names = fullName.Split(' ');
+            Console.WriteLine("First name from split {0}", names[0]);
+            Console.WriteLine("Last name from split {0}", names[1]);
+
+            var replacedName = fullName.Replace("Dani", "David");
+            Console.WriteLine("Replaced name {0}", replacedName);
+        }
+
         static void timeSpan()
         {
             // Declaring

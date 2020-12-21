@@ -1,5 +1,6 @@
 ﻿using System;
 using ConsoleApp1.Math;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -15,6 +16,33 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             enums();
+        }
+
+        static void lists()
+        {
+            // Declaration
+            var numbers = new List<int>();
+            
+            // Filled declaration
+            var filledNumebrs = new List<int> { 1, 2, 3, 4, 5 };
+            
+            // Add elements
+            filledNumebrs.Add(1);
+            filledNumebrs.AddRange(new int[3] { 7, 8, 9 });
+
+            // Index of
+            filledNumebrs.IndexOf(1); //first occurance of 1
+
+            // Last index of
+            filledNumebrs.LastIndexOf(1); //last occurance of 1
+
+            // Count
+            var totalElements = filledNumebrs.Count;
+
+            // Remove elemtn
+            filledNumebrs.Remove(1); //Will remove the first occurance of 1
+            filledNumebrs.RemoveAt(2); //Remove element by position
+
         }
 
         static void enums()
@@ -46,6 +74,15 @@ namespace ConsoleApp1
             //Declare filled array
             var names = new String[3] { "Jack", "John", "Mary" };
             var filledNumbers = new[] { 1, 2, 3, 4, 5, 6 };
+
+            //Declare matrix
+            var matrix = new int[3,5];
+
+            //Declare dynamic size matrix
+            var dynMatrix = new int[3][];
+            dynMatrix[0] = new int[5];
+            dynMatrix[0] = new int[2];
+            dynMatrix[0] = new int[8];
 
             // Check lenght
             Console.WriteLine("Array lenght {0}", filledNumbers.Length);

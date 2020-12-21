@@ -15,7 +15,59 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            enums();
+            dateTimes();
+        }
+
+        static void timeSpan()
+        {
+            // Declaring
+            var timeSpan = new TimeSpan(1, 2, 3);
+
+            var timeSpan1 = new TimeSpan(1, 0, 0);
+            var timeSpan2 = TimeSpan.FromHours(1);
+
+            var start = DateTime.Now;
+            var end = DateTime.Now.AddMinutes(2);
+            var duration = end - start;
+
+            // Properties
+            var minutes = timeSpan.Minutes;
+
+            // Add
+            timeSpan.Add(TimeSpan.FromMinutes(8));
+
+            // to string
+            timeSpan.ToString();
+            TimeSpan.Parse("01:02:03");
+        }
+
+        static void dateTimes()
+        {
+            var dateTime = new DateTime(2020, 2, 22);
+            Console.WriteLine("Datetime from specific time {0}", dateTime);
+            
+            var now = DateTime.Now;
+            Console.WriteLine("Datetime.Now {0}", now);
+            
+            //Today just returns the date, without hh:mm:ss
+            var today = DateTime.Today;
+            Console.WriteLine("Datetime.Today {0}", today);
+
+            //Access values
+            var hour = now.Hour;
+            var min = now.Minute;
+            var sec = now.Second;
+
+            //Addd time to datetime
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
+
+            Console.WriteLine("Tomorrow long date {0}", tomorrow.ToLongDateString());
+            Console.WriteLine("Tomorrow long time {0}", tomorrow.ToLongTimeString());
+            Console.WriteLine("Yesterday short date {0}", yesterday.ToShortDateString());
+            Console.WriteLine("Yesterday short time {0}", yesterday.ToShortTimeString());
+            Console.WriteLine("Tomorrow toString {0}", tomorrow.ToString());
+            Console.WriteLine("Tomorrow with format {0}", tomorrow.ToString("yyyy-MM-dd"));
         }
 
         static void lists()

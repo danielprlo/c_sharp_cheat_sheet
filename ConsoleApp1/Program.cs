@@ -1,6 +1,7 @@
 ﻿using System;
 using ConsoleApp1.Math;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -16,6 +17,64 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             dateTimes();
+        }
+
+        static void paths()
+        {
+            var path = @"c:\temp\mydir\test.txt";
+
+            //Get extension of a file
+            Path.GetExtension(path);
+            //Get filename
+            Path.GetFileName(path);
+            //Get filename without extension
+            Path.GetFileNameWithoutExtension(path);
+            //Get directory name
+            Path.GetDirectoryName(path);
+
+        }
+        static void directories()
+        {
+            var path = @"c:\temp\mydir";
+
+            //Create directory
+            Directory.CreateDirectory(path);
+            //get files in array
+            var files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
+            //Get directories in array
+            var directories = Directory.GetDirectories(path, "*.*", SearchOption.AllDirectories);
+            //Check if exists
+            Directory.Exists(path);
+
+            //Using directory info
+            var directoryInfo = new DirectoryInfo(path);
+
+            //getFiles
+            directoryInfo.GetFiles();
+            //get directories
+            directoryInfo.GetDirectories();
+        }
+
+        static void files()
+        {
+            var path = @"c:\somefile.jpg";
+
+            //Copy file
+            File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
+            // Delete file
+            File.Delete(path);
+            //Read content
+            var content = File.ReadAllText(path);
+
+            //Using FileInfo
+            var fileInfo = new FileInfo(path);
+            //Copy file
+            fileInfo.CopyTo("path");
+            //Delete file
+            fileInfo.Delete();
+            //Check if exists
+            var exists = fileInfo.Exists;
+          
         }
 
         static void strings()

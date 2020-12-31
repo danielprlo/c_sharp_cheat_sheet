@@ -1,3 +1,5 @@
+Most of the cheatsheet inside of Program.cs 
+
 Debugging in C
 - Add breakpoint: F9
 - Run with debug: F5

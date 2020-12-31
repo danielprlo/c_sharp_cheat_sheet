@@ -1,4 +1,4 @@
-Most of the cheatsheet inside of Program.cs 
+# Most of the cheatsheet code is inside of Program.cs 
 
 Debugging in C
 - Add breakpoint: F9
